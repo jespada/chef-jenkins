@@ -13,7 +13,7 @@ Chef
 Platform
 --------
 
-* 'default' - Server installation - currently supports Red Hat/CentOS 5.x and Ubuntu 8.x/9.x/10.x
+* 'default' - Server installation - currently supports Red Hat/CentOS 5.x and Ubuntu 8.x/9.x/10.x (works in debian 6 too)
 
 * 'node_ssh' - Any platform that is running sshd.
 
@@ -70,11 +70,14 @@ Attributes
 * jenkins[:node][:jvm_options] - SSH slave JVM options
 * jenkins[:iptables_allow] - if iptables is enabled, add a rule passing 'jenkins[:server][:port]'
 * jenkins[:nginx][:http_proxy][:variant] - use `nginx` or `apache2` to proxy traffic to jenkins backend (`nil` by default)
+* jenkins[:http_proxy][:basic_auth_username] - http basic auth username (if you chooshe variant = nginx or apache2)
+* jenkins[:http_proxy[:basic_auth_password] - http basic auth passwd (if you chooshe variant = nginx or apache2)
 * jenkins[:http_proxy][:www_redirect] - add a redirect rule for 'www.*' URL requests ("disable" by default)
 * jenkins[:http_proxy][:listen_ports] - list of HTTP ports for the HTTP proxy to listen on ([80] by default)
 * jenkins[:http_proxy][:host_name] - primary vhost name for the HTTP proxy to respond to (`node[:fqdn]` by default)
 * jenkins[:http_proxy][:host_aliases] - optional list of other host aliases to respond to (empty by default)
 * jenkins[:http_proxy][:client_max_body_size] - max client upload size ("1024m" by default, nginx only)
+
 
 Usage
 =====
