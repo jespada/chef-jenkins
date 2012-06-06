@@ -123,3 +123,5 @@ default[:jenkins][:http_proxy][:host_aliases]         = []
 default[:jenkins][:http_proxy][:client_max_body_size] = "1024m"
 default[:jenkins][:http_proxy][:basic_auth_username] = "jenkins"
 default[:jenkins][:http_proxy][:basic_auth_password] = "jenkins"
+#this will make the url fqdn/jenkins (example.com/jenkins)
+default[:jenkins][:http_proxy][:prefix] = "jenkins"
